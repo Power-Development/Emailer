@@ -2,11 +2,11 @@
 
 if (process.env.NODE_ENV === 'production') {
     // we are in production - return the prod set of keys
-    require ('./prod');
-    module.exports('./prod');
+    module.exports = require ('./prod');
+    // module.export('./prod');
     //the above two statements can also be wrttien as >>> module.exports = require('./prod')
 } else {
     // we are in development - return the dev keys
-    require ('./dev');
-    module.exports('./dev');
+    module.exports = require ('./dev');
+    //module.export('./dev');
 }
