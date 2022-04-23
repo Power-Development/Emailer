@@ -31,6 +31,7 @@
     "passport-microsoft": "^1.0.0",
     "react": "^18.0.0",
     "react-scripts": "^5.0.1",
-    "stripe": "^8.218.0"
+    "stripe": "^8.218.0",
+    "typescript": "^4.6.3"
   }
 }
