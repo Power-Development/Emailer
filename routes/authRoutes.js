@@ -11,13 +11,16 @@ module.exports = (app) => {
     //Google authentication route handler #2
     app.get(
         '/auth/google/callback', //path name
-        passport.authenticate('google') //code to execute when the above path is accessed
+        passport.authenticate('google'), //code to execute when the above path is accessed
+        (req, res) => {
+            res.redirect ('/surveys');
+        }
     );
     
     //route handler #3
     app.get('/api/logout',  (req, res) => {
         req.logout();
-        res.send(req.user); // a function from passport
+        res.redirect('/'); // a function from passport
      });
     
     //route handler #4
