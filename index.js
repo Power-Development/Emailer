@@ -5,7 +5,8 @@ const passport = require('passport');
 const authRoutes = require('./routes/authRoutes') // importing authRoutes
 const keys = require('./config/keys');
 const bodyParser = require ('body-parser');
-require('./models/User')
+require('./models/User');
+require('./models/Survey');
 //Becuase Passport.js does not return anything, it can be a require statement only
 require('./services/passport');
 
@@ -24,10 +25,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-authRoutes(app); //exported app module from authRoutes.js
-//can also be done as 
-//require('./routes/authRoutes')(app)
+//authRoutes(app); 
+//exported app module from authRoutes.js and can also be done as 
+require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env. NODE_ENV === 'production') {
     //Express will serve up production assests
