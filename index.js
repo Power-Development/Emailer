@@ -5,10 +5,10 @@ const passport = require('passport');
 const authRoutes = require('./routes/authRoutes') // importing authRoutes
 const keys = require('./config/keys');
 const bodyParser = require ('body-parser');
-require('./models/User');
-require('./models/Survey');
+require ('./models/User');
+require ('./models/Survey');
 //Becuase Passport.js does not return anything, it can be a require statement only
-require('./services/passport');
+require ('./services/passport');
 
 mongoose.connect(keys.mongoURI);
 
