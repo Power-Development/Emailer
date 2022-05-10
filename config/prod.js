@@ -1,7 +1,5 @@
 // prod.js - production keys are here
 
-const { sendGridKey } = require("./dev");
-
 module.exports = {
     googleClientID: process.env.GOOGLE_CLIENT_ID,
     googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
