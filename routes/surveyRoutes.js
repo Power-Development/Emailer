@@ -33,7 +33,7 @@ module.exports = app => {
 
             res.send(user);
         }   catch (err) {
-            res.status(422)
+            res.status(422).send(err);
         }
     });
 };
